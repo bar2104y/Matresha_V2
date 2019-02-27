@@ -10,7 +10,8 @@ app.debug = True
 @app.route('/')
 @app.route('/<lang>')
 def index(lang='RU'):
-	return render_template('index.html', lang=lang)
+	str = 'index' + lang + '.html'
+	return render_template(str, lang=lang)
 
 @app.route('/robotid/<id>/GoRoom/<AudNumber>')
 def goAudiories(id=0, AudNumber=1111):
